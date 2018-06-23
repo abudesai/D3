@@ -7,33 +7,61 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<svg id="svg-ctr" width="500" height = "500">
+	<svg width="500" height = "500">
 
 		<!-- RECTANGLE -->
-		<rect id="rect" x="5" y="5" width="100" height = "100"></rect>	
+		<rect x="5" y="5" width="100" height = "100"></rect>	
 		<text x="15" y="22">Rectangle</text>	
 
 		<!-- Circle -->
-		<circle id="circle" r="75" cx="100" cy="100"> </circle>	
+		<circle r="75" cx="100" cy="100"> </circle>	
 		<text x="100" y="100">Circle</text>	
 
 		<!-- Ellipse -->
-		<ellipse id="ellipse" rx="50" ry="100" cx="200" cy="200"></ellipse>	
+		<ellipse rx="50" ry="100" cx="200" cy="200"></ellipse>	
 		<text x="180" y="140">Ellipse</text>	
 
 		<!-- Line -->
-		<line id="line" x1="0" y1="300" x2="500" y2="0"></line>	
+		<line x1="0" y1="300" x2="500" y2="0"></line>	
 		<text x="30" y="300">Line</text>	
 
 		<!-- Polygon -->
-		<polygon id="polygon" points="200,200 340,200 200,340 340,340"> </polygon>	
+		<polygon points="200,200 340,200 200,340 340,340"> </polygon>	
 		<text x="240" y="220">Polygon</text>	
 
 		<!-- Polyline -->
-		<polyline id="polyline" points="200,360 340,360 200,480 340,480"> </polyline>
+		<polyline points="200,360 340,360 200,480 340,480"> </polyline>
 		<text x="240" y="380">Polyline</text>	
 
 		<!-- Path -->
+		<path  
+			d="
+				M  50, 400 
+				L 150, 400 
+				L 100, 480 
+				Z
+					
+				M  50, 460 
+				L 150, 460 
+				L 100, 380 
+				Z 
+			" 
+		> 
+		</path>	
+		<text x="20" y="370">Straight Line Paths</text>	
+
+		<path 
+			d="
+				M 360, 200 
+				L 360, 400 
+				Q 500, 300 360,200 
+				Z
+			" 
+		> 
+		<!-- We can use lowercase letters to provide relative movements instead of absolute -->
+		</path>	
+		<text x="410" y="215">Quadratic</text>	
+		<text x="410" y="235">Curved Path</text>	
 
 	</svg>
 
