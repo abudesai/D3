@@ -1,0 +1,43 @@
+
+#svg-ctr {
+	background-color: lightgray;
+}
+
+#rect {
+	fill:#ffc0cb;
+	stroke: #fa8072;
+	stroke-width: 10px;
+}
+
+#circle {
+	fill:#89d8b3;
+	stroke: #3d9887;
+	stroke-width: 10px;
+}
+
+
+#ellipse {
+	fill:#eea990;
+	stroke: #aa6f73;
+	stroke-width: 10px;
+}
+
+
+#line {
+	stroke: #cc2a36;
+	stroke-width: 10px;
+}
+
+#polygon {
+	fill:#fdcf58;
+	stroke: #f27d0c;
+	stroke-width: 10px;
+}
+
+
+#polyline {
+	fill:#e5d0ff;
+	stroke: #bf8bff;
+	stroke-width: 10px;
+}
+
