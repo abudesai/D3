@@ -43,3 +43,8 @@ path{
 	stroke: #4b86b4;
 	stroke-width: 5px;
 }
+
+text{
+	fill:#414a4c;
+	font-size: 12px;
+}

@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SVG Clip Paths</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<svg width="500" height = "500">
+
+		<!-- Clip Paths -->
+		<!-- def a clip path -->
+		<defs>
+			<clipPath id="custom_clip_path" >
+				<rect x="250" y="250" width="200" height="200"></rect>
+				<circle r="50" cx="200" cy="200"></circle>
+			</clipPath>
+		</defs>
+
+		<!-- Create a circle and apply clip-path -->
+		<circle cx="250" cy="250" r=200 clip-path="url(#custom_clip_path)"> </circle>
+
+		<!-- To help understand what's going on, re-draw the circle but make it hollow -->
+		<circle cx="250" cy="250" r=200 class="circle_visualize"> </circle>
+
+		<!-- Draw the rectangle and circle that clipped the circle -->
+		<rect x="250" y="250" width="200" height="200"></rect>
+		<circle r="50" cx="200" cy="200" class="circle_visualize"></circle>		
+
+	</svg>
+</body>
+</html>

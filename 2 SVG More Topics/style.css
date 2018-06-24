@@ -1,0 +1,21 @@
+
+svg {
+	background-color: #e3e3e3;
+}
+
+text{
+	stroke: red;
+	stroke-width: 1px;
+	font-size:25px;
+	font-weight: bold;
+	text-anchor: middle;
+	fill: blue;
+}
+
+
+path{
+	fill:none;
+	stroke: #aaaaaa;
+	stroke-width: 2px;
+}
+

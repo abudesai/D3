@@ -1,0 +1,20 @@
+
+svg{
+	background-color: lightgray;
+}
+
+circle {
+	fill: #1cd5db;
+}
+
+rect{
+	stroke: red;
+	stroke-width: 2px;
+	fill:none;
+}
+
+.circle_visualize {
+	stroke: blue;
+	stroke-width: 2px;
+	fill:none;
+}
