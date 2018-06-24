@@ -1,0 +1,24 @@
+#chart{
+    width: 800px;
+    height: 400px;
+    background-color: #eaeaea;
+    margin: 25px auto;
+}
+
+.bar {
+	display: inline-block;
+	width: 25px;
+	/*height: 300px;*/
+	background-color: #7ED26D;
+	margin-right: 5px;
+}
+
+
+text{
+	/*stroke: #fff;*/
+	stroke-width: 1px;
+	font-size:14px;
+	font-weight: bold;
+	text-anchor: middle;
+	fill: #fff;
+}

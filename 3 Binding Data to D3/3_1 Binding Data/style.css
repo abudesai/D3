@@ -1,0 +1,13 @@
+
+.not_underlined {
+	text-decoration: none; 
+}
+
+
+.underlined {
+	text-decoration: underline; 
+}
+
+.special {
+	font-size: 1.5em;
+}
