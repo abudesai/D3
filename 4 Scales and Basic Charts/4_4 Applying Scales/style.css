@@ -1,0 +1,15 @@
+#chart{
+    width: 800px;
+    height: 400px;
+    background-color: #eaeaea;
+    margin: 25px auto;
+    
+}
+
+
+text{
+	/*stroke: #fff;*/
+	stroke-width: 1px;
+	font-size:15px;
+	text-anchor: middle;
+}
