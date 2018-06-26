@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ordinal Scales</title>
+</head>
+<body>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script>
+        var fruit       =   [
+            'Apples', 'Oranges', 'Grapes', 'Strawberry', 'Kiwi'
+        ];
+
+        const scale 	= d3.scaleBand(  )
+        		.domain( fruit )
+        		.range ( [100, 400] )
+
+        console.log('Apples: ', scale('Apples'));			//returns 0
+        console.log('Oranges: ', scale('Oranges'));			//returns 100
+        console.log('Grapes: ', scale('Grapes'));			//returns 200
+        console.log('Strawberry: ', scale('Strawberry'));	//returns 300
+        console.log('Kiwi: ', scale('Kiwi'));				//returns 400
+
+/*
+	basically does a (max - min) on the range, and divides by the # of items in the domain 
+	scaled value of item i = min + 3 * ( (max - min) / #_of_items )
+*/
+
+    </script>
+</body>
+</html>
