@@ -23,9 +23,15 @@ var chart_height    =   800;
 var padding         =   50;
 
 // Format Date
-data.forEach(function(e, i){
-    data[i].date    =   time_parse(e.date);
-});
+// data.forEach(function(e, i){
+//     data[i].date    =   time_parse(e.date);
+// });
+
+data.map((d)=>{
+    d.date = time_parse(d.date);
+    return d;
+})
+
 
 // Scales
 var x_scale         =   d3.scaleTime()
@@ -38,6 +44,7 @@ var x_scale         =   d3.scaleTime()
         })
     ])
     .range([padding, chart_width - padding]);
+
 var y_scale         =   d3.scaleLinear()
     .domain([
         0, d3.max(data, function(d) {
@@ -45,6 +52,7 @@ var y_scale         =   d3.scaleLinear()
         })
     ])
     .range([chart_height - padding, padding]);
+
 
 // Create SVG
 var svg             =   d3.select("#chart")
@@ -58,9 +66,48 @@ var x_axis          =   d3.axisBottom(x_scale)
     .tickFormat(time_format);
 var y_axis          =   d3.axisLeft(y_scale)
     .ticks(12);
+
+// Add Axes to SVG
 svg.append("g")
     .attr("transform", "translate(0," + (chart_height - padding) + ")")
     .call(x_axis);
 svg.append("g")
     .attr("transform", "translate(" + padding + ",0)")
     .call(y_axis);
+
+// Create Line Chart
+var line            =   d3.line()
+    .defined(function(d){
+        return d.num > 0 && d.num <= 100;
+    })
+    .x( function(d){
+        return x_scale( d.date );
+    })
+    .y( function(d){
+        return y_scale( d.num );
+    });
+
+var red_line            =   d3.line()
+    .defined(function(d){
+        return d.num > 100;
+    })
+    .x( function(d){
+        return x_scale( d.date );
+    })
+    .y( function(d){
+        return y_scale( d.num );
+    });
+
+svg.append( 'path' )
+    .datum( data )  //this is unlike the data function. With data(), each data point is a separate append.  Here it's all one datum for the line
+    .attr( 'fill', 'none')
+    .attr( 'stroke', '#73FF36')
+    .attr( 'stroke-width', 5)
+    .attr( 'd', line);      //line is for the line()
+
+svg.append( 'path' )
+    .datum( data )  //this is unlike the data function. With data(), each data point is a separate append.  Here it's all one datum for the line
+    .attr( 'fill', 'none')
+    .attr( 'stroke', '#EA280C')
+    .attr( 'stroke-width', 5)
+    .attr( 'd', red_line);      //line is for the line()

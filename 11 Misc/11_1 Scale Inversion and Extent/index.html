@@ -1,0 +1,33 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Scales</title>
+</head>
+<body>
+
+	<script src="https://d3js.org/d3.v5.js"></script>
+	<script type="text/javascript">
+		var slices = [100, 200, 300, 400, 500]
+		var extent = d3.extent( slices ) //extent returns an array with the min and max number of domain range
+		console.log('Extent: ', extent)
+		var scale = d3.scaleLinear()
+			.domain( extent ) 
+			.range([10, 350]); 	
+
+		console.log('scale(100):', scale(100)) 	//returns 10
+		console.log('scale(300):', scale(300)) 	//returns 180 which is mid-point of range
+		console.log('scale(500):', scale(500)) 	//returns 350
+
+
+		console.log('scale.invert(10):', scale.invert(10)) 	//returns 100
+		console.log('scale.invert(180):',scale.invert(180)) 	//returns 300 which is mid-point of domain
+		console.log('scale.invert(350):',scale.invert(350)) 	//returns 500
+
+
+	</script>
+</body>
+</html>

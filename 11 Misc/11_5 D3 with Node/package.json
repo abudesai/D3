@@ -1,0 +1,7 @@
+{
+  "name": "",
+  "version": "",
+  "dependencies": {
+    "d3-node": "^2.0.1"
+  }
+}

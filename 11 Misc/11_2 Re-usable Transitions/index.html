@@ -1,0 +1,37 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Transitions</title>
+</head>
+<body>
+
+	<script src="https://d3js.org/d3.v5.js"></script>
+	<script type="text/javascript">
+
+		<!-- We can create transition function variables that we can re-use in the code -->
+		var t 				= 	d3.transition()
+			.duration(2000)
+			.ease( d3.easePolyIn );
+
+		var svg				= 	d3.select( 'body' )
+			.append( 'svg' )
+			.attr( 'width', 600)
+			.attr( 'height', 600);
+
+		var circle 			= 	svg.append( 'circle' )
+			.attr( 'cx', 200)
+			.attr( 'cy', 200)
+			.attr( 'r', 50)
+			.attr( 'fill', '#B20000')
+			.transition(t)		//pass the variable function
+			.attr( 'r', 150) 
+			.attr( 'fill', '#00FF48');
+
+
+	</script>
+</body>
+</html>
